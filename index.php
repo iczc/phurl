@@ -1,5 +1,6 @@
 <?php
 ini_set('display_errors', 0);
+$prefix[0] = '';
 $filename = 'install';
 if (is_dir($filename)) {
     die ("To get Phurl up and running, you first need to go through the <a href=\"install\">installation wizard</a> which will help you set up your new URL shortener in a matter of moments.<br/><br/>If you've already installed Phurl, then you MUST delete the install directory before it will function.");
@@ -15,7 +16,7 @@ if (count($_GET) > 0) {
     $url   = mysql_real_escape_string(trim($_GET['url']));
     $alias = mysql_real_escape_string(trim($_GET['alias']));
 
-    if (!preg_match("/^(".URL_PROTOCOLS.")\:\/\//i", $url) || !preg_match("/^(mailto)\:\i", $url)) {
+    if (!preg_match("/^(".URL_PROTOCOLS.")\:\/\//i", $url)) {
  	$prefix = explode(":", $url);
  	if ($prefix[0] == 'mailto') {
  		$url = $url;
