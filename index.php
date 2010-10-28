@@ -1,4 +1,5 @@
 <?php
+define('PHURL', true);
 ini_set('display_errors', 0);
 $prefix[0] = '';
 $filename = 'install';

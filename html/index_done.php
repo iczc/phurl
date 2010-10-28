@@ -1,4 +1,8 @@
 <?php
+if( !defined('PHURL' ) ) {
+    header('HTTP/1.0 404 Not Found');
+    exit();
+}
 ini_set('display_errors', 0);
 ?>
 <h2>Short URL has been created!</h2>
