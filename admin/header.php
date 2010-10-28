@@ -19,11 +19,11 @@ ini_set('display_errors', 0);
 
 <span class="style2">Administration<hr />
 <?php
-$updateurl = "http://updateserv.bn0.eu/os/phurl/latest.txt";
+$updateurl = "http://liveupdate.hencogroup.co.uk/os/phurl/latest.txt";
 $fh = fopen($updateurl, 'r');
 $version = fread($fh, 3);
 fclose($fh);
-$current = PHURL_UPDATESERV;
+$current = PHURL_NUMERICVERSION;
 if ($version > $current && $version !== $current) {
 echo "<center><p style=\"color:green;\">A new version of Phurl is available! Download it at <a href=\"http://code.google.com/p/phurl/downloads/list\">http://code.google.com/p/phurl/downloads/list</a></p></center><hr/>";
 } 
