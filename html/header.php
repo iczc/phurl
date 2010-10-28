@@ -1,0 +1,12 @@
+<html>
+<head>
+<title><?php echo SITE_TITLE ?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="assets/default.css" />
+</head>
+<body>
+<div id="container">
+<div id="header">
+<a href="<?php echo SITE_URL ?>" ><h1 style="color:black;"><?php echo SITE_TITLE ?></h1></a>
+</div>
+<div id="content">
