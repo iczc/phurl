@@ -50,6 +50,14 @@ $db_pages  = ceil($db_count / 25);
 $db_result = mysql_query("SELECT * FROM ".DB_PREFIX."urls WHERE $db_query ORDER BY date_added DESC LIMIT $db_start, 25") or db_die(__FILE__, __LINE__, mysql_error());
 
 echo "<table id=\"url_list\">\n";
+    echo "<tr>\n".
+         "<td><u>ID</td></u>\n".
+         "<td><u>Code</u></td>\n".
+         "<td><u>Alias</u></td>\n".
+         "<td><u>Long URL</u></td>\n".
+         "<td><u>Date Added</u></td>\n".
+         "<td><u>Delete</u></td>\n".
+	  "</tr>\n";
 
 while ($db_row = mysql_fetch_assoc($db_result)) {
     $db_row = array_filter($db_row, "stripslashes");
@@ -57,14 +65,15 @@ while ($db_row = mysql_fetch_assoc($db_result)) {
     extract($db_row, EXTR_OVERWRITE|EXTR_PREFIX_ALL, "u");
 
     if (empty($u_alias)) {
-        $u_alias = "&nbsp;";
+        $u_alias = "";
     }
 
-    echo "<tr>\n".
-         "<td>$u_id</td>\n".
+    echo 
+	  "<tr>\n".
+	  "<td>$u_id</td>\n".
          "<td>$u_code</td>\n".
-         "<td>$u_alias</td>\n".
-         "<td>$u_url</td>\n".
+         "<td>" . htmlentities($u_alias) . "</td>\n".
+         "<td>" . htmlentities($u_url) . "</td>\n".
          "<td>$u_date_added</td>\n".
          "<td><a href=\"javascript:delete_url($u_id);\">Delete</a></td>\n".
          "</tr>\n";
@@ -77,11 +86,11 @@ if ($db_count > 25) {
     echo "<p>\n";
 
     if ($page > 1) {
-        echo "<a href=\"{$_SERVER['PHP_SELF']}?page=".($page - 1)."\">&laquo; Prev</a> ";
+        echo "<a href=\"index.php?page=".($page - 1)."\">&laquo; Prev</a> ";
     }
 
     if ($page < $db_pages) {
-        echo "<a href=\"{$_SERVER['PHP_SELF']}?page=".($page + 1)."\">Next &raquo;</a>";
+        echo "<a href=\"index.php?page=".($page + 1)."\">Next &raquo;</a>";
     }
 
     echo "</p>\n";

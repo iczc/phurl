@@ -1,3 +1,6 @@
+<?php
+ini_set('display_errors', 0);
+?>
 <html>
 <head>
 <title>Phurl Administration</title>

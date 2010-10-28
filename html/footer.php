@@ -1,3 +1,6 @@
+<?php
+ini_set('display_errors', 0);
+?>
 <h2>Browser Bookmarklets</h2>
 <div id="bookmarklets">
 <p>Drag these links to your browser toolbar.</p>

@@ -1,7 +1,10 @@
+<?php
+ini_set('display_errors', 0);
+?>
 <h2>Create a short URL</h2>
 <?php print_errors() ?>
 <div id="create_form">
-<form method="get" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+<form method="get" action="index.php">
 <p><label for="url">Enter web address (URL) here:</label><br />
 <input id="url" type="text" name="url" value="<?php echo htmlentities(@$_GET['url']) ?>" />
 <input class="button" type="submit" value="Shorten" /></p>
