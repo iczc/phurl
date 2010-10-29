@@ -12,7 +12,7 @@ if (empty($_GET['f'])) {
 
 } elseif ($_GET['f'] == 'short') {
 	//Show shortned link page
-	echo nextAlias(1);
+
 } elseif ($_GET['f'] == 'redirect') {
 	//Redirect to long url
 
