@@ -135,4 +135,7 @@ a {
 	font-size: 14px;
 }
 	
+#expand {
+	cursor: pointer;
+}
 	

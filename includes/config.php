@@ -16,7 +16,7 @@ $CONFIG['site_url']		= 'http://locahost'; //URL without trailing slash
 $CONFIG['theme']		= 'default';
 
 //Extra
-$CONFIG['debug']		= 'off';
+$CONFIG['debug']		= 'on';
 $CONFIG['version']		= '3.0.1';
 
 
