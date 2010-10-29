@@ -42,9 +42,9 @@ function aliasIsAvailable($alias) {
 	$query = mysql_query("SELECT * FROM `urls` WHERE `alias` = '$alias';");
 	$mysql_querys++;
 	if (mysql_num_rows($query) == 0) {
-		return true;
+		return 'yes';
 	} else {
-		return false;
+		return 'no';
 	}
 }
 
@@ -62,6 +62,8 @@ function insertURL($long, $alias='') {
 	$mysql_querys++;
 	if (empty($alias)) {
 		$lid = mysql_insert_id($query);
+		$alias = compressNumber($lid);
+		
 	}
 }
 
