@@ -126,6 +126,13 @@ a {
 	font: 22px "Trebuchet MS";
 	float: left;
 	padding: 2px;
-	}
+}
+.error {
+	color: #ff1111;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 14px;
+}
 	
 	
