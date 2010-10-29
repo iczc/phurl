@@ -1,5 +1,5 @@
 <?php
-//Main funtions file
+//Main functions file
 
 function mysqlConnect() {
 	$connection = mysql_connect($config['mysql_server'], $config['mysql_user'], $config['mysql_pass']);
