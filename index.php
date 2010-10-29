@@ -11,7 +11,7 @@ if (empty($_GET['f'])) {
 	include 'includes/home.php';
 
 } elseif ($_GET['f'] == 'short') {
-	//Show shortned link page
+	//Show shortened link page
 
 } elseif ($_GET['f'] == 'redirect') {
 	//Redirect to long url
@@ -20,13 +20,13 @@ if (empty($_GET['f'])) {
 	//Show stats for link
 
 } elseif ($_GET['f'] == 'error') {
-	echo "<h1>Something went technicaly wrong...</h1>";
-	echo "<h2>Something isnt working right, and has caused this error to be displayed. {$config['site_name']} have been alerted of this problem.</h2>";
+	echo "<h1>Something went technically wrong...</h1>";
+	echo "<h2>Something isn't working right, and has caused this error to be displayed. {$config['site_name']} have been alerted of this problem.</h2>";
 	echo "<h4>Error information: ";
 	if ($_GET['q'] == 'mysql_con') {
-		echo "Phurl was unable to connect to your mysql server.";
+		echo "Phurl was unable to connect to the mysql server.";
 	} elseif ($_GET['q'] == 'mysql_db') {
-		echo "Phurl was unable to select your mysql database.";
+		echo "Phurl was unable to select the mysql database.";
 	} else {
 		echo "Unknown error. Please contact the Phurl support team.";
 	}

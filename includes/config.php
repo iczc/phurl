@@ -1,6 +1,6 @@
 <?php
 //Phurl V3 Config File
-//Not directly compatable with v2 Config Files
+//Not directly compatible with v2 Config Files
 $config = array();
 
 //MySQL Config
