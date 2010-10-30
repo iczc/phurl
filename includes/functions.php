@@ -42,9 +42,9 @@ function aliasIsAvailable($alias) {
 	$query = mysql_query("SELECT * FROM `urls` WHERE `alias` = '$alias';");
 	$mysql_querys++;
 	if (mysql_num_rows($query) == 0) {
-		return 'yes';
+		return true;
 	} else {
-		return 'no';
+		return false;
 	}
 }
 
