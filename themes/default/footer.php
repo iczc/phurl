@@ -1,6 +1,6 @@
 
 <div id="footer">
-<p>&copy; 2010 <?php echo $config['site_name']; ?> - Powered by <a
+<p>&copy; <?php echo date('Y'); ?> <?php echo $config['site_name']; ?> - Powered by <a
 	href="http://www.phurlproject.org/">Phurl</a>.</p>
 </div>
 </div>
