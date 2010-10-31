@@ -1,3 +1,9 @@
+<?php
+if( !defined('PHURL' ) ) {
+    header('HTTP/1.0 404 Not Found');
+    exit();
+}
+?>
 <html>
 <head>
 <title><?php echo $config['site_name']; ?> | <?php echo $config['site_slogan']; ?></title>
