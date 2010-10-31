@@ -1,8 +1,8 @@
 <?php
 //Phurl V3
 //Started Development on October 29th
+define('PHURL', true);
 include 'includes/config.php';
-
 include 'includes/functions.php';
 include('themes/' . $config['theme'] . '/header.php');
 

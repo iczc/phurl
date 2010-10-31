@@ -1,4 +1,8 @@
 <?php
+if( !defined('PHURL' ) ) {
+    header('HTTP/1.0 404 Not Found');
+    exit();
+}
 if (!empty($_GET['error'])) {
 	echo "<div class=\"error\">" . $_GET['error'] . "</div>";
 }
