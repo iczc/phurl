@@ -8,8 +8,8 @@ if( !defined('PHURL' ) ) {
 <head>
 <title><?php echo $config['site_name']; ?> | <?php echo $config['site_slogan']; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="text/javascript" src="<?php echo 'themes/' . $config['theme'] . '/extra/jquery.js'; ?>"></script>
-<link rel="stylesheet" type="text/css" href="themes/<?php echo $config['theme']; ?>/style.css" />
+<script type="text/javascript" src="<?php echo 'phurl-themes/' . $config['theme'] . '/extra/jquery.js'; ?>"></script>
+<link rel="stylesheet" type="text/css" href="phurl-themes/<?php echo $config['theme']; ?>/style.css" />
 </head>
 <body>
  <div id="header">
