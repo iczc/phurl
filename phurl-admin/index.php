@@ -1,6 +1,6 @@
 <?php
-require_once("../includes/config.php");
-require_once("../includes/functions.php");
+require_once("../phurl-includes/config.php");
+require_once("../phurl-includes/functions.php");
 require_once("includes/header.php");
 ?>
 <table style="width: 100%">

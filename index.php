@@ -2,13 +2,13 @@
 //Phurl V3
 //Started Development on October 29th
 define('PHURL', true);
-include 'includes/config.php';
-include 'includes/functions.php';
-include('themes/' . $config['theme'] . '/header.php');
+include 'phurl-includes/config.php';
+include 'phurl-includes/functions.php';
+include('phurl-themes/' . $config['theme'] . '/header.php');
 
 if (empty($_GET['f'])) {
 	//Show home page
-	include 'includes/home.php';
+	include 'phurl-includes/home.php';
 
 } elseif ($_GET['f'] == 'short') {
 	//Show shortened link page
@@ -35,5 +35,5 @@ if (empty($_GET['f'])) {
 
 
 
-include('themes/' . $config['theme'] . '/footer.php');
+include('phurl-themes/' . $config['theme'] . '/footer.php');
 ?>
