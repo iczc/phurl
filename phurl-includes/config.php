@@ -18,7 +18,7 @@ $config['theme']		= 'default';
 
 //Extra
 $config['debug']		= true;
-$config['version']		= '3.0.1';
+$config['version']		= '3.0.0';
 
 
 ?>

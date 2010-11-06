@@ -6,8 +6,21 @@ Welcome to your Phurl Dashboard. The Dashboard forms part of the new administrat
 <tr>
 <td style="width:50%;">
 <h2>Your Phurl Installation</h2>
-Status: Good<br/>
-Version: 3.0.0
+<p>Installed: <?php echo $current; ?></p>
+<p>Latest: <?php echo $version; ?></p>
+<p>Status:
+<?php
+if ($version > $current && $version !== $current) {
+echo "<span style=\"color:red;\">Outdated.</span><br/><br/>Advice: Please download the latest version of Phurl from <a href=\"http://www.phurlproject.org/\">http://www.phurlproject.org/</a>.</span>";
+} 
+elseif ($version < $current && $version !== $current) {
+echo "<span style=\"color:blue;\">Prerelease.</span><br/><br/>Advice: Expect Bugs!</span>";
+}
+else {
+echo "<span style=\"color:green;\">Good.</span>";
+}
+?>
+</p>
 </td>
 <td style="width:50%;">
 <h2>Latest Phurl News</h2>
