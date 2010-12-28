@@ -24,8 +24,10 @@ echo "<span style=\"color:green;\">Good.</span>";
 </td>
 <td style="width:50%;">
 <h2>Latest Phurl News</h2>
-~ blah blah blah demo text
-<br/>~ Henco rocks.
+<?php
+$phurlnews = file_get_contents("http://feedread.hencogroup.co.uk/?url=http://feeds.feedburner.com/PhurlUpdates&amount=3&container=li&id=56782");
+echo $phurlnews;
+?>
 </td>
 </tr>
 <tr>
@@ -39,14 +41,49 @@ echo "<span style=\"color:green;\">Good.</span>";
 </td>
 <td style="width:50%;">
 <h2>Latest Phurl Source Commits</h2>
-<ul>
-<li>Commit by henry@phurlproject.org :: / (4 files in 3 dirs): (link)<br/>
-Used variable 'PHURL' to prevent includes from being run outside of the main script.</li>
-<li>Commit by jordan@phurlproject.org :: /includes/ (home.php functions.php): (link)<br/>
-Added home.php as a default template for the homepage. Also edited some functions.</li>
-<li>Commit by henry@phurlproject.org :: /themes/default/footer.php: (link)<br/>
-Updated the footer to get the current year from the php date function.</li>
-</ul>
+<?php
+$commits = file_get_contents("http://feedread.hencogroup.co.uk/?url=http://feeds.feedburner.com/PhurlCommits&amount=3&container=li&id=5267111");
+echo $commits;
+?>
 </td>
+</tr>
+<tr>
+<td style="width:50%;">
+<h2>Sample</h2>
+One day, something will be here.
+</td>
+<td style="width:50%;">
+<h2>Phurl on Twitter</h2>
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 4,
+  interval: 6000,
+  width: 'auto',
+  height: 250,
+  theme: {
+    shell: {
+      background: '#333333',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#000000',
+      color: '#ffffff',
+      links: '#4aed05'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('phurlproject').start();
+</script></td>
 </tr>
 </table>
