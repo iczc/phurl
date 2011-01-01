@@ -4,6 +4,7 @@
 define('PHURL', true);
 include 'phurl-includes/config.php';
 include 'phurl-includes/functions.php';
+include 'phurl-themes/' . $config['theme'] . '/lang/'. $config['language'] . '.lang.php';
 include('phurl-themes/' . $config['theme'] . '/header.php');
 
 if (empty($_GET['f'])) {

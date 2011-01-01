@@ -66,6 +66,8 @@ function insertURL($long, $alias='') {
 		
 	}
 }
+
+
 //Update server settings
 $updateurl = "http://cdn.phurlproject.org/liveupdate/latest.txt";
 $fh = fopen($updateurl, 'r');

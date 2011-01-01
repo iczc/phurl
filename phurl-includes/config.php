@@ -15,7 +15,7 @@ $config['site_name']    = 'Phurl Version 3'; //Site name
 $config['site_slogan']	= 'Make your long urls into shorter ones!'; //Site Slogan
 $config['site_url']		= 'http://locahost'; //URL without trailing slash
 $config['theme']		= 'default';
-$config['language']		= 'en_GB';
+$config['language']		= 'en';
 
 //Extra
 $config['debug']		= true;
