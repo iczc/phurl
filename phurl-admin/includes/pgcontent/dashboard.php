@@ -25,8 +25,8 @@ echo "<span style=\"color:green;\">Good.</span>";
 <td style="width:50%;">
 <h2>Latest Phurl News</h2>
 <?php
-$phurlnews = file_get_contents("http://feedread.hencogroup.co.uk/?url=http://feeds.feedburner.com/PhurlUpdates&amount=3&container=li&id=56782");
-echo $phurlnews;
+$rss = file_get_contents("http://rss2html.ur.cx/api.php?num=5&container=li&target=_blank&id=052c1f5fe48b8000b723e3ca21263da0&class=&url=http://blog.phurlproject.org/rss");
+echo $rss;
 ?>
 </td>
 </tr>
@@ -42,8 +42,8 @@ echo $phurlnews;
 <td style="width:50%;">
 <h2>Latest Phurl Source Commits</h2>
 <?php
-$commits = file_get_contents("http://feedread.hencogroup.co.uk/?url=http://feeds.feedburner.com/PhurlCommits&amount=3&container=li&id=5267111");
-echo $commits;
+$rss = file_get_contents("http://rss2html.ur.cx/api.php?num=5&container=li&target=_blank&id=d99633d0de10aca2467690af77e48cc6&class=&url=http://feeds.feedburner.com/PhurlCommits");
+echo $rss;
 ?>
 </td>
 </tr>
