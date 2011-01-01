@@ -67,6 +67,8 @@ function insertURL($long, $alias='') {
 	}
 }
 
+//Update settings
+$config['version']		= '3.0.0'; //This version
 
 //Update server settings
 $updateurl = "http://cdn.phurlproject.org/liveupdate/latest.txt";

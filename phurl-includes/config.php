@@ -14,12 +14,9 @@ $config['mysql_prefix'] = 'ph_'; //MySQL Table prefix
 $config['site_name']    = 'Phurl Version 3'; //Site name
 $config['site_slogan']	= 'Make your long urls into shorter ones!'; //Site Slogan
 $config['site_url']		= 'http://locahost'; //URL without trailing slash
-$config['theme']		= 'default';
-$config['language']		= 'en';
+$config['theme']		= 'default'; //Theme folder name in /phurl-themes
+$config['language']		= 'en'; //Language of site
 
 //Extra
-$config['debug']		= true;
-$config['version']		= '3.0.0';
-
-
+$config['debug']		= true; //Enable or disable debug
 ?>
