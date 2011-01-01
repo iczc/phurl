@@ -1,8 +1,8 @@
 <?php
 //english theme language file
-$lang = array():
+global $lang;
 
-$lang[lang] = "English";
+$lang['lang'] = "English";
 $lang[6] = "Home";
 $lang[7] = "Tools";
 $lang[8] = "About";

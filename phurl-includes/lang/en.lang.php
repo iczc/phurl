@@ -1,8 +1,8 @@
 <?php
 //english language file
-$lang = array():
+global $lang;
 
-$lang[lang] = "English";
+$lang['lang'] = "English";
 $lang[1] = "Something went technically wrong...";
 $lang[2] = "Something isn't working right, and has caused this error to be displayed.";
 $lang[3] = "have been alerted of this problem.";
