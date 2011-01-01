@@ -3,6 +3,8 @@ if( !defined('PHURL' ) ) {
     header('HTTP/1.0 404 Not Found');
     exit();
 }
+
+include 'phurl-themes/' . $config['theme'] . '/lang/'. $config['language'] . '.lang.php'; //Include theme language file
 ?>
 <html>
 <head>

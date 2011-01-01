@@ -2,9 +2,9 @@
 //Phurl V3
 //Started Development on October 29th
 define('PHURL', true);
-include 'phurl-includes/config.php';
-include 'phurl-includes/functions.php';
-include 'phurl-themes/' . $config['theme'] . '/lang/'. $config['language'] . '.lang.php';
+include 'phurl-includes/config.php'; //Include config file
+include 'phurl-includes/functions.php'; //Include functions file
+include 'phurl-includes/lang/'. $config['language'] . '.lang.php'; //Include theme language file
 include 'phurl-themes/' . $config['theme'] . '/header.php';
 
 if (empty($_GET['f'])) {
