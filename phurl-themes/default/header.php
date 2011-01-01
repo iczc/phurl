@@ -17,9 +17,9 @@ if( !defined('PHURL' ) ) {
  	<span id="slogan">- <?php echo $config['site_slogan']; ?></span>
  	<div id="menu">
  		<ul>
- 			<li><a href="home">Home</a></li>
- 			<li><a href="home">Tools</a></li>
- 			<li><a href="home">About</a></li>
+ 			<li><a href="home"><?php echo $lang[1]; ?></a></li>
+ 			<li><a href="home"><?php echo $lang[2]; ?></a></li>
+ 			<li><a href="home"><?php echo $lang[3]; ?></a></li>
  		</ul>
  	</div>
  	<div class="clear"></div>
