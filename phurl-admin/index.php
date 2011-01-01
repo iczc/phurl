@@ -2,6 +2,7 @@
 require_once("../phurl-includes/config.php");
 require_once("../phurl-includes/functions.php");
 require_once("includes/header.php");
+error_reporting(0);
 ?>
 <table style="width: 100%">
 	<tr>
