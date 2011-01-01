@@ -3,8 +3,8 @@
 global $lang;
 
 $lang['lang'] = "English";
-$lang[6] = "Home";
-$lang[7] = "Tools";
-$lang[8] = "About";
-$lang[9] = "Powered by";
+$lang[1] = "Home";
+$lang[2] = "Tools";
+$lang[3] = "About";
+$lang[4] = "Powered by";
 ?>
