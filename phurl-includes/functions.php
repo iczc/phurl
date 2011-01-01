@@ -5,7 +5,7 @@ function mysqlConnect() {
 	$connection = mysql_connect($config['mysql_server'], $config['mysql_user'], $config['mysql_pass']);
 	if (!$connection) {
 		if ($config['debug']) {
-			die("ERROR: MySQL - Could not connect to database!");
+			die($p_lang[13]);
 		//} else {
 			//header("Location: index.php?f=error&q=mysql_con");
 		}
@@ -15,7 +15,7 @@ $database = mysql_select_db($config['mysql_db'], $connection);
 
 if (!$database){
 	if ($config['debug']) {
-		die("ERROR: MySQL - Could not select database!");
+		die($p_lang[14]);
 	//} else {
 		//header("Location: index.php?f=error&q=mysql_db");
 	}

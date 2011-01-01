@@ -9,17 +9,17 @@ if (!empty($_GET['error'])) {
 ?>
 <div id="content">
 	<div class="input">
-		<span class="field">Paste a link to shorten:</span>
+		<span class="field"><?php echo $p_lang[8]; ?>:</span>
 		<input type="text" name="long_url" class="text_box" />
 	</div>
 	
 	<div class="input">
-		<span class="field" onclick="$('#options').slideToggle('slow', function() {});" id="expand">[+] Customize</span>
+		<span class="field" onclick="$('#options').slideToggle('slow', function() {});" id="expand">[+] <?php echo $p_lang[9]; ?></span>
 	</div>
 	
 	<div id="options">
 		<div class="input">
-			<span class="field">Add a custom alias (e.g. <?php echo $config['site_url']; ?>/bicycles) - May contain alphanumeric characters, hyphens and underscores only.</span>
+			<span class="field"><?php echo $p_lang[10]; ?> (e.g. <?php echo $config['site_url']; ?>/<?php echo $p_lang[11]; ?>) - <?php echo $p_lang[12]; ?></span>
 			<span class="pre"><?php echo $config['site_url']; ?>/</span><input type="text" name="custom_alias" class="text_box_small" />
 	</div>
 	<div class="clear"></div>
