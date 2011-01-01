@@ -1,3 +1,7 @@
+<?php 
+include '../phurl-includes/config.php'; //Include config
+include '../phurl-includes/lang/'. $config['language'] . '.lang.php'; //Include phurl language file
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="en-gb" http-equiv="Content-Language" /><meta content="text/html; charset=utf-8" http-equiv="Content-Type" /><title>Untitled 2</title>&nbsp;<style type="text/css">
 .auto-style1 {
 	text-align: center;
@@ -13,12 +17,12 @@
 <form method="post">
 	<table style="width: 200px" align="center">
 		<tr>
-			<td class="auto-style2">Username: </td>
+			<td class="auto-style2"><?php echo $p_lang[15]; ?>: </td>
 			<td>
 			<input name="Text2" style="width: 200px; height: 35px" type="text" class="auto-style2" /></td>
 		</tr>
 		<tr>
-			<td class="auto-style2">Password:</td>
+			<td class="auto-style2"><?php echo $p_lang[16]; ?>:</td>
 			<td>
 			<input name="Text3" style="width: 200px; height: 35px" type="password" class="auto-style2" /></td>
 		</tr>

@@ -16,6 +16,9 @@ $p_lang[10] = "Add a custom alias";
 $p_lang[11] = "bicycles";
 $p_lang[12] = "May contain alphanumeric characters, hyphens and underscores only.";
 $p_lang[13] = "ERROR: MySQL - Could not connect to database!";
-$p_lang[14] = "ERROR: MySQL - Could not select database!"
+$p_lang[14] = "ERROR: MySQL - Could not select database!";
+$p_lang[15] = "Username";
+$p_lang[16] = "Password";
+$p_lang[17] = "You have logged out succesfully. Thanks for choosing Phurl!";
 
 ?>

@@ -4,7 +4,7 @@
 define('PHURL', true);
 include 'phurl-includes/config.php'; //Include config file
 include 'phurl-includes/functions.php'; //Include functions file
-include 'phurl-includes/lang/'. $config['language'] . '.lang.php'; //Include theme language file
+include 'phurl-includes/lang/'. $config['language'] . '.lang.php'; //Include phurl language file
 include 'phurl-themes/' . $config['theme'] . '/header.php';
 
 if (empty($_GET['f'])) {
@@ -21,15 +21,15 @@ if (empty($_GET['f'])) {
 	//Show stats for link
 
 } elseif ($_GET['f'] == 'error') {
-	echo "<h1>Something went technically wrong...</h1>";
-	echo "<h2>Something isn't working right, and has caused this error to be displayed. {$config['site_name']} have been alerted of this problem.</h2>";
-	echo "<h4>Error information: ";
+	echo "<h1>{$p_lang[1]}</h1>";
+	echo "<h2>{$p_lang[2]} {$config['site_name']} {$p_lang[3]}</h2>";
+	echo "<h4>{$p_lang[4]}: ";
 	if ($_GET['q'] == 'mysql_con') {
-		echo "Phurl was unable to connect to the mysql server.";
+		echo $p_lang[5];
 	} elseif ($_GET['q'] == 'mysql_db') {
-		echo "Phurl was unable to select the mysql database.";
+		echo $p_lang[6];
 	} else {
-		echo "Unknown error. Please contact the Phurl support team.";
+		echo $p_lang[7];
 	}
 }
 
