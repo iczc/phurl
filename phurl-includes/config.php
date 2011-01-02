@@ -12,8 +12,8 @@ $config['mysql_prefix'] = 'ph_'; //MySQL Table prefix
 
 //Site Config
 $config['site_name']    = 'Phurl Version 3'; //Site name
-$config['site_slogan']	= 'Make your long urls into shorter ones!'; //Site Slogan
-$config['site_url']		= 'http://locahost'; //URL without trailing slash
+$config['site_slogan']	= 'URLs made shorter, URLs made simpler.'; //Site Slogan
+$config['site_url']		= 'http://localhost'; //URL without trailing slash
 $config['theme']		= 'default'; //Theme folder name in /phurl-themes
 $config['language']		= 'en'; //Language of site
 
