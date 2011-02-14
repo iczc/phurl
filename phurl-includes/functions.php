@@ -68,10 +68,13 @@ function insertURL($long, $alias='') {
 }
 
 //Update settings
-$config['version']		= '3.0.0'; //This version
-
-//Update server settings
+$config['version']		= '3.0.0'; 
 $updateurl = "http://cdn.phurlproject.org/liveupdate/latest.txt";
 $version = @file_get_contents($updateurl);
 $current = $config['version'];
+
+function checkauth {
+header("Location: login.php");
+exit();
+}
 ?>
