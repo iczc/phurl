@@ -88,7 +88,7 @@ function generate_salt()
           return $salt;
 }
 
-function user_register($username, $password, $email, $name, $accesslevel)
+function user_register($username, $password, $email, $fname, $lname, $time_reg, $acclevel)
 {
      // Generate API Key
      $apikey = rand(9999999, 99999999999999999999999);
@@ -102,7 +102,7 @@ function user_register($username, $password, $email, $name, $accesslevel)
 
      // And lastly, store the information in the database
      db_connect();
-     $query = "insert into phurl_users (username, password, salt, email, name, accesslevel, apikey) values ('$username', '$encrypted', '$salt', '$email', '$name', '$accesslevel', '$apikey')";
+     $query = "insert into phurl_users (username, password, salt, email, fname, lname, time_reg, acclevel, apikey) values ('$username', '$encrypted', '$salt', '$email', '$fname', '$lname', '$time_reg', '$acclevel', '$apikey')";
      mysql_query ($query) or die ('Could not create user.');
 }
 function user_login($username, $password)
