@@ -1,4 +1,5 @@
 <?php
+header("HTTP/1.1 200 OK");
 require_once("config.php");
 require_once("functions.php");
 
