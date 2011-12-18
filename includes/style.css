@@ -138,4 +138,31 @@ a {
 #expand {
 	cursor: pointer;
 }
-	
+
+#url_list {
+  border: 0;
+}
+
+#url_list td {
+  padding: 3px;
+  background-color: #eee;
+}
+#staterror_title {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size:24px;
+	margin-top: 5px; margin-bottom: 0px;
+	text-align: center;
+        font-weight: normal;
+        color: #222;
+}
+#staterror_text {
+        font-family: "Lucida Grande", Tahoma;
+	font-size: 10px;
+	font-weight: lighter;
+	font-variant: normal;
+	text-transform: uppercase;
+	color: #666666;
+        margin-top: 10px;
+	text-align: center!important;
+	letter-spacing: 0.3em;
+}

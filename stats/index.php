@@ -8,6 +8,20 @@ die;
 }
 $alias = str_replace("-","",$alias);
 $url   = get_url($alias);
+$result = mysql_query("SELECT * from ".DB_PREFIX."urls WHERE BINARY alias='$alias' OR code='$alias'");
+$num_rows = mysql_num_rows($result);
+if ($num_rows < 1) {
+echo "<div id=\"staterror_title\"><h2>Sad Panda.</h2></div><div id=\"staterror_text\"><p style=\"font-size: 10pt;\">The URL you requested doesn't exist.<br/>So we can't provide any stats for it, sadly.<br/>You could always <a href=\"". SITE_URL ."\" >shorten a new URL</a>.<br/>:(</p></div><br/>";
+include 'html/footer.php';
+die();
+}
+$result = mysql_query("SELECT * from ".DB_PREFIX."stats WHERE BINARY alias='$alias'");
+$num_rows = mysql_num_rows($result);
+if ($num_rows < 1) {
+echo "<div id=\"staterror_title\"><h2>Not Just Yet.</h2></div><div id=\"staterror_text\"><p style=\"font-size: 10pt;\">This URL exists, but has had no clicks yet.<br/>Share it around, and you'll see stats here shortly after people start clicking.<br/>:)</p></div>";
+include 'html/footer.php';
+die();
+}
 ?>
 <h3>Statistics for <a href="<?php echo SITE_URL; ?>/<?php echo $alias ?>"><?php echo SITE_URL; ?>/<?php echo $alias ?></a></h3>
 <table width="50%" align="center">
