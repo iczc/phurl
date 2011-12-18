@@ -37,7 +37,7 @@ $id = $alias;
 ?>
 <b>Regional statistics for <?php echo SITE_URL; ?>/<?php echo $alias ?> (Total <?php echo $total['clicks']; ?> clicks)</b><br />
 <?php
-$result = mysql_query("SELECT country, clicks FROM ".DB_PREFIX."stats WHERE BINARY alias='p' GROUP BY country ORDER BY clicks DESC");
+$result = mysql_query("SELECT country, clicks FROM ".DB_PREFIX."stats WHERE BINARY alias='$alias' GROUP BY country ORDER BY clicks DESC");
 $countries = "";
 $numbers = "";
 echo "<div id=\"flags\">";
@@ -49,7 +49,7 @@ $country = $row['country'];
 }
 echo "</div>";
 echo "<img src=\"http://chart.apis.google.com/chart?chf=bg,t,bebebe&chco=233a4b%2C5ba1d2&cht=p3&chd=t:" . mb_substr($numbers,0, -1) . "&chs=500x200&chl=" . mb_substr($countries, 0,-1) . "\" />";
-$result = mysql_query("SELECT country, clicks FROM ".DB_PREFIX."stats WHERE BINARY alias='p' GROUP BY country ORDER BY clicks DESC");
+$result = mysql_query("SELECT country, clicks FROM ".DB_PREFIX."stats WHERE BINARY alias='$alias' GROUP BY country ORDER BY clicks DESC");
 $countries = "";
 $numbers = "";
 while($row = mysql_fetch_assoc($result)) {
