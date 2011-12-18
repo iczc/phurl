@@ -17,7 +17,7 @@ $url   = get_url($alias);
 <td align="center">
 <b>Page Title: </b><?php $file = file($url);
 $file = implode("",$file);
-$result = mysql_query("SELECT SUM(clicks) AS clicks FROM ".DB_PREFIX."_stats WHERE BINARY alias='$alias'");
+$result = mysql_query("SELECT SUM(clicks) AS clicks FROM ".DB_PREFIX."stats WHERE BINARY alias='$alias'");
 $total=mysql_fetch_assoc($result);
 if(preg_match("/<title>(.+)<\/title>/i",$file,$m))
 print "$m[1]";
