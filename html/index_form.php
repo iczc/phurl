@@ -18,7 +18,7 @@ ini_set('display_errors', 0);
 	
 	<div id="options">
 		<div class="input">
-			<span class="field">Add a custom alias (e.g. <?php echo SITE_URL; ?>/bicycles) - May contain alphanumeric characters, hyphens and underscores only.</span>
+			<span class="field">Add a custom alias (e.g. <?php echo SITE_URL; ?>/bicycles) - May contain alphanumeric characters and underscores only.</span>
 			<span class="pre"><?php echo SITE_URL; ?>/</span><input type="text" name="alias" class="text_box_small" /><br/></p>
 	</div>
 	<div class="clear"></div>

@@ -53,8 +53,8 @@ if (count($_GET) > 0) {
     }
 
     if (strlen($alias) > 0) {
-        if (!preg_match("/^[a-zA-Z0-9_-]+$/", $alias)) {
-            $_ERROR[] = "Custom aliases may only contain letters, numbers, underscores and dashes.";
+        if (!preg_match("/^[a-zA-Z0-9_]+$/", $alias)) {
+            $_ERROR[] = "Custom aliases may only contain alphanumeric characters and underscores.";
         }
         else if (code_exists($alias) || alias_exists($alias)) {
             $_ERROR[] = "The custom alias you entered already exists.";
