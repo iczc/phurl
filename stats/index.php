@@ -44,7 +44,6 @@ print "<i>(title not detected)</i>";
 </tr>
 </table><br/>
 <?php
-require ("stats/intelliregion.php");
 require ("stats/isoregion.php");
 db_connect();
 $id = $alias;
