@@ -21,7 +21,7 @@ if (preg_match("/^[a-zA-Z0-9_-]+\-$/", $alias)) {
  if (($url = get_url($alias))) {
     $ipad=$_SERVER['REMOTE_ADDR'];
     $country = file_get_contents("http://api.hostip.info/country.php?ip=$ipad");
-    if ($country = 'XX') {
+    if ($country == 'XX') {
      $country = 'Unknown';
     }
     $result=mysql_query("SELECT count(*) as numrecords FROM ".DB_PREFIX."stats WHERE alias='$alias' and country='$country'") or die ('An error was encountered. Please refer to phurl support for more info. :('); 
