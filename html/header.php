@@ -9,6 +9,23 @@ if( !defined('PHURL' ) ) {
 <title><?php echo SITE_TITLE; ?> | <?php echo SITE_SLOGAN; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="<?php echo 'includes/jquery.js'; ?>"></script>
+<?php
+$getalias = trim(mysql_real_escape_string($_SERVER['REQUEST_URI']));
+$alias = substr($getalias, 1, strlen($getalias));
+$alias = str_replace("-","",$alias);
+$jquery = <<<JQUERY
+<script>
+ $(document).ready(function() {
+ 	 $("#dynamicdiv").load("stats/dynamic.php?alias=$alias");
+   var refreshId = setInterval(function() {
+      $("#dynamicdiv").load('stats/dynamic.php?alias=$alias');
+   }, 9000);
+   $.ajaxSetup({ cache: false });
+});
+</script>
+JQUERY;
+echo $jquery;
+?>
 <link rel="stylesheet" type="text/css" href="includes/style.css" />
 </head>
 <body>

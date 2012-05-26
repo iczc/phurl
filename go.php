@@ -24,7 +24,7 @@ if (preg_match("/^[a-zA-Z0-9_-]+\-$/", $alias)) {
     if ($country == 'XX') {
      $country = 'Unknown';
     }
-    $result=mysql_query("SELECT count(*) as numrecords FROM ".DB_PREFIX."stats WHERE alias='$alias' and country='$country'") or die ('An error was encountered. Please refer to phurl support for more info. :('); 
+    $result=mysql_query("SELECT count(*) as numrecords FROM ".DB_PREFIX."stats WHERE BINARY alias='$alias' and country='$country'") or die ('An error was encountered. Please refer to phurl support for more info. :('); 
     $row=mysql_fetch_assoc($result);
     if ($row['numrecords'] >= 1){
 mysql_query("UPDATE `".DB_PREFIX."stats` SET `clicks` = clicks+1 WHERE `alias` = '$alias' and `country` = '$country';");    
