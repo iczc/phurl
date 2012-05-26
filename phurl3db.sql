@@ -41,4 +41,4 @@ CREATE TABLE  IF NOT EXISTS `phurl_users` (
 ) ENGINE = MYISAM
 
 INSERT INTO `phurl_urls` (`id`, `url`, `code`, `alias`, `date_added`, `ip`, `user`) VALUES
-(1, 0x687474703a2f2f706875726c2e676f6f676c65636f64652e636f6d2f, 'a', 'phurl', '2010-07-03 15:40:56', '', '');
+(1, 0x687474703a2f2f706875726c2e676f6f676c65636f64652e636f6d2f, 'a', 'phurl', '2010-07-03 15:40:56', '127.0.0.1', '');
