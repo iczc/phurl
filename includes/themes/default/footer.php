@@ -5,7 +5,7 @@ if( !defined('PHURL' ) ) {
 }
 ?>
 <div id="footer">
-<p>&copy; <?php echo date('Y'); ?> <?php echo SITE_TITLE; ?> - Proudly powered by 
+<p>&copy; <?php echo date('Y'); ?> <?php echo $phurl_config['site_name']; ?> - Proudly powered by 
 <a href="http://www.phurlproject.org/">Phurl</a>.</p>
 </div>
 </div>

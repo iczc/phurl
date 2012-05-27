@@ -3,11 +3,12 @@ if( !defined('PHURL' ) ) {
     header('HTTP/1.0 404 Not Found');
     exit();
 }
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title><?php echo SITE_TITLE; ?> | <?php echo SITE_SLOGAN; ?></title>
+<title><?php echo $phurl_config['site_name']; ?> | <?php echo $phurl_config['site_slogan']; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="<?php echo $phurl_config['theme_path']; ?>style.css" />
 	<script type="text/javascript" src="<?php echo $phurl_config['theme_path']; ?>jquery.js"></script>
@@ -52,8 +53,8 @@ echo $jquery;
 <body>
 <div id="container">
  <div id="header">
- 	<div id="logo"><h1><?php echo SITE_TITLE; ?></h1></div>
- 	<span id="slogan">- <?php echo SITE_SLOGAN; ?></span>
+ 	<div id="logo"><h1><?php echo $phurl_config['site_name']; ?></h1></div>
+ 	<span id="slogan">- <?php echo $phurl_config['site_slogan']; ?></span>
  	<div id="menu">
  		<ul>
  			<li><a href="/">Home</a></li>
