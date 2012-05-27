@@ -1,1 +1,6 @@
+AuthName "Restricted Area" 
+AuthType Basic 
+AuthUserFile /home/henry/.htpasswd 
+AuthGroupFile /dev/null 
+require valid-user
 ErrorDocument 404 /go.php

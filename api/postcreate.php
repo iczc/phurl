@@ -3,9 +3,11 @@ require_once("../config.php");
 require_once("../functions.php");
 ini_set('display_errors', 0);
 db_connect();
-if (count($_GET) > 0) {
-    $url   = mysql_real_escape_string(trim($_GET['url']));
-    $alias = mysql_real_escape_string(trim($_GET['a']));
+
+if (count($_POST) > 0) {
+    $url   = mysql_real_escape_string(trim($_POST['url']));
+    $alias = mysql_real_escape_string(trim($_POST['a']));
+
     if (!preg_match("/^(".URL_PROTOCOLS.")\:\/\//i", $url)) {
         $url = "http://".$url;
     }
@@ -25,12 +27,9 @@ if (count($_GET) > 0) {
         $_ERROR[] = "Please enter a valid URL to shorten.";
     }
     else {
-	$blcheck = file_get_contents("http://gsb.phurlproject.org/lookup.php?url=$url");
-	if (trim($blcheck) == "1") {
- 	     $_ERROR[] = "Blacklist match";
-	}
         $hostname = get_hostname();
         $domain   = get_domain();
+
         if (preg_match("/($hostname|$domain)/i", $data['host'])) {
             $_ERROR[] = "The URL you have entered is not allowed.";
         }
@@ -85,8 +84,8 @@ if (count($_GET) > 0) {
 
         $short_url = SITE_URL."/".$code;
 
-        $_GET['url']   = "";
-        $_GET['alias'] = "";
+        $_POST['url']   = "";
+        $_POST['alias'] = "";
 	echo "$short_url\n";
         exit();
     }
