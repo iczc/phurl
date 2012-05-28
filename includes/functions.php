@@ -1,5 +1,4 @@
 <?php
-include 'config.php';
 function db_die($filename, $line, $message) {
     die("File: $filename<br />Line: $line<br />Message: $message");
 }
@@ -9,45 +8,44 @@ function db_ins_die($filename, $line, $message) {
 }
 
 function db_connect() {
-    mysql_connect($phurl_config['mysql_server'], $phurl_config['mysql_username'], $phurl_config['mysql_password']) or db_die(__FILE__, __LINE__, mysql_error());
-    mysql_select_db($phurl_config['mysql_database']) or db_die(__FILE__, __LINE__, mysql_error());
-
+    mysql_connect(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD) or db_die(__FILE__, __LINE__, mysql_error());
+    mysql_select_db(DB_NAME) or db_die(__FILE__, __LINE__, mysql_error());
 }
 
 function db_ins_connect() {
-    mysql_connect($phurl_config['mysql_server'], $phurl_config['mysql_username'], $phurl_config['mysql_password']) or db_ins_die(__FILE__, __LINE__, mysql_error());
-    mysql_select_db($phurl_config['mysql_database']) or db_ins_die(__FILE__, __LINE__, mysql_error());
+    mysql_connect(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD) or db_ins_die(__FILE__, __LINE__, mysql_error());
+    mysql_select_db(DB_NAME) or db_ins_die(__FILE__, __LINE__, mysql_error());
 }
 
 function get_last_number() {
-    $db_result = mysql_query("SELECT last_number FROM ".$phurl_config['mysql_prefix']."settings") or db_die(__FILE__, __LINE__, mysql_error());
+    $db_result = mysql_query("SELECT last_number FROM ".DB_PREFIX."settings") or db_die(__FILE__, __LINE__, mysql_error());
     $db_row    = mysql_fetch_row($db_result);
 
     return $db_row[0];
 }
 
 function increase_last_number() {
-    mysql_query("UPDATE ".$phurl_config['mysql_prefix']."settings SET last_number = (last_number + 1)") or db_die(__FILE__, __LINE__, mysql_error());
+    mysql_query("UPDATE ".DB_PREFIX."settings SET last_number = (last_number + 1)") or db_die(__FILE__, __LINE__, mysql_error());
 
     return (mysql_affected_rows() > 0) ? true : false;
 }
 
 function code_exists($code) {
-    $db_result = mysql_query("SELECT COUNT(id) FROM ".$phurl_config['mysql_prefix']."urls WHERE BINARY code = '$code'") or db_die(__FILE__, __LINE__, mysql_error());
+    $db_result = mysql_query("SELECT COUNT(id) FROM ".DB_PREFIX."urls WHERE BINARY code = '$code'") or db_die(__FILE__, __LINE__, mysql_error());
     $db_row    = mysql_fetch_row($db_result);
 
     return ($db_row[0] > 0) ? true : false;
 }
 
 function alias_exists($alias) {
-    $db_result = mysql_query("SELECT COUNT(id) FROM ".$phurl_config['mysql_prefix']."urls WHERE BINARY alias = '$alias'") or db_die(__FILE__, __LINE__, mysql_error());
+    $db_result = mysql_query("SELECT COUNT(id) FROM ".DB_PREFIX."urls WHERE BINARY alias = '$alias'") or db_die(__FILE__, __LINE__, mysql_error());
     $db_row    = mysql_fetch_row($db_result);
 
     return ($db_row[0] > 0) ? true : false;
 }
 
 function url_exists($url) {
-    $db_result = mysql_query("SELECT id, code, alias FROM ".$phurl_config['mysql_prefix']."urls WHERE url LIKE '$url'") or db_die(__FILE__, __LINE__, mysql_error());
+    $db_result = mysql_query("SELECT id, code, alias FROM ".DB_PREFIX."urls WHERE url LIKE '$url'") or db_die(__FILE__, __LINE__, mysql_error());
 
     if (mysql_num_rows($db_result) > 0) {
         return mysql_fetch_row($db_result);
@@ -70,17 +68,17 @@ function generate_code($number) {
 }
 
 function insert_url($url, $code, $alias) {
-    mysql_query("INSERT INTO ".$phurl_config['mysql_prefix']."urls (url, code, alias, date_added) VALUES ('$url', '$code', '$alias', NOW())") or db_die(__FILE__, __LINE__, mysql_error());
+    mysql_query("INSERT INTO ".DB_PREFIX."urls (url, code, alias, date_added) VALUES ('$url', '$code', '$alias', NOW())") or db_die(__FILE__, __LINE__, mysql_error());
 
     return mysql_insert_id();
 }
 
 function update_url($id, $alias) {
-    mysql_query("UPDATE ".$phurl_config['mysql_prefix']."urls SET alias = '$alias' WHERE id = '$id'") or db_die(__FILE__, __LINE__, mysql_error());
+    mysql_query("UPDATE ".DB_PREFIX."urls SET alias = '$alias' WHERE id = '$id'") or db_die(__FILE__, __LINE__, mysql_error());
 }
 
 function get_url($alias) {
-    $db_result = mysql_query("SELECT url FROM ".$phurl_config['mysql_prefix']."urls WHERE BINARY code = '$alias' OR alias = '$alias'") or db_die(__FILE__, __LINE__, mysql_error());
+    $db_result = mysql_query("SELECT url FROM ".DB_PREFIX."urls WHERE BINARY code = '$alias' OR alias = '$alias'") or db_die(__FILE__, __LINE__, mysql_error());
 
     if (mysql_num_rows($db_result) > 0) {
         $db_row = mysql_fetch_row($db_result);

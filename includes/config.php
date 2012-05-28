@@ -5,23 +5,24 @@
 */
 
 // MySQL Setup
-$phurl_config['mysql_server'] = "localhost";
-$phurl_config['mysql_username'] = "root";
-$phurl_config['mysql_password'] = "password";
+define('DB_HOSTNAME', 'localhost');
+define('DB_USERNAME', 'user');
+define('DB_PASSWORD', 'password');
+define('DB_NAME',  'user_db');
+define('DB_PREFIX', 'phurl_');
 
-$phurl_config['mysql_database'] = "phurl_database";
-$phurl_config['mysql_prefix'] = "phurl_";
+// Site Settings
+define('SITE_URL', 'http://example.org');
+define('SITE_TITLE', 'example.org');
+define('SITE_SLOGAN', 'URLs made shorter, URLs made simpler.');
 
 // Phurl Theme Setup
-$phurl_config['theme_path'] = "includes/themes/default/";
-$phurl_config['site_name']	=	"Lorem Ipsum URL Shortener";
-$phurl_config['site_slogan']	=	"URLs made shorter, URLs made simpler.";
-
-
-
+define('THEME_PATH', 'includes/themes/default/');
 
 // Do *not* mess with anything below
-$phurl_config['installed'] = true;
-$phurl_config['loaded'] = true;
+define('URL_PROTOCOLS', 'http|https|ftp|ftps|mailto|news|mms|rtmp|rtmpt|e2dk');
+define('PHURL_VERSION', '3.0');
+error_reporting(E_ALL);
+$_ERROR = array();
 
 ?>
