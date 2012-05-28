@@ -1,6 +1,6 @@
 <?php
-require_once("../config.php");
-require_once("../functions.php");
+require_once("../includes/config.php");
+require_once("../includes/functions.php");
 ini_set('display_errors', 0);
 db_connect();
 if (count($_GET) > 0) {

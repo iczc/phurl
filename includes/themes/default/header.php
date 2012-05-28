@@ -1,8 +1,8 @@
 <?php
-if( !defined('PHURL' ) ) {
-    header('HTTP/1.0 404 Not Found');
-    exit();
-}
+ if( !defined('PHURL' ) ) {
+ header('HTTP/1.0 404 Not Found');
+     exit();
+ }
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -12,7 +12,6 @@ if( !defined('PHURL' ) ) {
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="<?php echo THEME_PATH; ?>style.css" />
 	<script type="text/javascript" src="<?php echo THEME_PATH; ?>jquery.js"></script>
-	
 	<script type="text/javascript"> 
 	$(document).ready(function(){
 		$("input#url").bind("textchange",showPage);
@@ -30,7 +29,18 @@ if( !defined('PHURL' ) ) {
 		$("#footer").animate({ opacity: 1}, 1000);
 	}
 
-	</script>
+	</script>	
+	<script type="text/javascript">
+$('form#surlform').submit(function(e){
+    e.preventDefault();
+    $.get("../../../../api/create.php", {url: $('input#url').val()}, function(data, status) {
+        $('input#url').val(data);
+        $('input#url').select()
+    });
+    return false;
+})
+
+</script>
 <?php
 $getalias = trim(mysql_real_escape_string($_SERVER['REQUEST_URI']));
 $alias = substr($getalias, 1, strlen($getalias));
@@ -38,9 +48,9 @@ $alias = str_replace("-","",$alias);
 $jquery = <<<JQUERY
 <script>
  $(document).ready(function() {
- 	 $("#dynamicdiv").load("stats/dynamic.php?alias=$alias");
+ 	 $("#dynamicdiv").load("includes/dynstats.php?alias=$alias");
    var refreshId = setInterval(function() {
-      $("#dynamicdiv").load('stats/dynamic.php?alias=$alias');
+      $("#dynamicdiv").load('includes/dynstats.php?alias=$alias');
    }, 9000);
    $.ajaxSetup({ cache: false });
 });
