@@ -16,7 +16,18 @@
 	$(document).ready(function(){
 		$("input#url").bind("textchange",showPage);
 		$("input#url").focus();
-    });
+
+			
+		$("form#surlform").submit(function(){
+			var url = $("input#url").val();	
+			$.get("api/create.php?url=" + url, function(data) {
+        			$("input#url").val(data);
+        			$("input#url").select();
+    			});
+
+   			return false;
+		});
+    	});
 	
 	$(document).click(function(){
 		showPage();
@@ -28,17 +39,6 @@
 		$(".notice").animate({ opacity: 1}, 1000);
 		$("#footer").animate({ opacity: 1}, 1000);
 	}
-
-	</script>	
-	<script type="text/javascript">
-$('form#surlform').submit(function(e){
-    e.preventDefault();
-    $.get("../../../../api/create.php", {url: $('input#url').val()}, function(data, status) {
-        $('input#url').val(data);
-        $('input#url').select()
-    });
-    return false;
-})
 
 </script>
 <?php
