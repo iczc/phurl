@@ -10,7 +10,7 @@ $('#urlform').submit(function(e){
 
 </script>
 <div id="shorten">
-	<img src="<?php echo $phurl_config['theme_path']; ?>enter-url-here.png" />
+	<img src="<?php echo THEME_PATH; ?>enter-url-here.png" />
 <form id="urlform">	
 <div id="url-box">
 		<div id="input"><input type="text" id="url" autocomplete="off" /></div>
