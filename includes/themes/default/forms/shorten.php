@@ -1,17 +1,7 @@
-<script>
-$('#urlform').submit(function(e){
-    e.preventDefault();
-    $.get("../../../../api/create.php", {url: $('input').val()}, function(data, status) {
-        $('input').val(data);
-        $('input').select()
-    });
-    return false;
-})
 
-</script>
 <div id="shorten">
 	<img src="<?php echo THEME_PATH; ?>enter-url-here.png" />
-<form id="urlform">	
+<form id="surlform">	
 <div id="url-box">
 		<div id="input"><input type="text" id="url" autocomplete="off" /></div>
 		<button id="button">Shorten</button>
