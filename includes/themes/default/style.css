@@ -76,10 +76,10 @@ a {
 }
 
 #content {
-	padding: 17px;
+
+	padding: 7px;
 	text-align: center;
-	max-width: 900px;
-	min-width: 700px;
+	
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -95,18 +95,14 @@ a {
 
 #footer {
 	border-top: 1px dotted #000;
-	margin: 5px;
-	padding: 7px;
 	filter:alpha(opacity=0); 
    -moz-opacity: 0; 
    opacity: 0; 
 }
 
 #footer #container {
-	max-width: 900px;
-	min-width: 700px;
-	margin-left: auto;
-	margin-right: auto;
+	
+	
 	text-align: center;
 }
 
