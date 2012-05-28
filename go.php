@@ -1,7 +1,7 @@
 <?php
-require_once("config.php");
-require_once("functions.php");
-require_once ("stats/isoregion.php");
+require_once("includes/config.php");
+require_once("includes/functions.php");
+require_once ("includes/isoregion.php");
 db_connect();
 
 $getalias = trim(mysql_real_escape_string($_SERVER['REQUEST_URI']));
@@ -9,9 +9,9 @@ $alias = substr($getalias, 1, strlen($getalias));
 
 if (preg_match("/^[a-zA-Z0-9_-]+\-$/", $alias)) {
   define('PHURL', true);
-  include "html/header.php";
-  include "stats/index.php";
-  include "html/footer.php";
+  include "includes/themes/default/header.php";
+  include "includes/stats.php";
+  include "includes/themes/default/footer.php";
   die();
 } elseif (!preg_match("/^[a-zA-Z0-9_]+$/", $alias)) {
   header("Location: ".SITE_URL, true, 301);

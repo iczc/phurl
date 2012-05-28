@@ -6,7 +6,6 @@
 
 // MySQL Setup
 $phurl_config['mysql_server'] = "localhost";
-$phurl_config['mysql_port'] = 3306;
 $phurl_config['mysql_username'] = "root";
 $phurl_config['mysql_password'] = "password";
 
