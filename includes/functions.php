@@ -67,6 +67,19 @@ function generate_code($number) {
     return $codes{$number}.$out;
 }
 
+function generate_code_rand() {
+$len = 5;
+$short = "";
+$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+$charslen = strlen($chars);
+for ($i=0; $i<$len; $i++)
+{
+        $rnd = rand(0, $charslen);
+        $short .= substr($chars, $rnd, 1);
+}
+return $short;
+}
+
 function insert_url($url, $code, $alias) {
     mysql_query("INSERT INTO ".DB_PREFIX."urls (url, code, alias, date_added) VALUES ('$url', '$code', '$alias', NOW())") or db_die(__FILE__, __LINE__, mysql_error());
 
