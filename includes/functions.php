@@ -1,4 +1,6 @@
 <?php
+$mysql = array();
+
 function db_die($filename, $line, $message) {
     die("File: $filename<br />Line: $line<br />Message: $message");
 }
@@ -8,8 +10,18 @@ function db_ins_die($filename, $line, $message) {
 }
 
 function db_connect() {
-    mysql_connect(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD) or db_die(__FILE__, __LINE__, mysql_error());
-    mysql_select_db(DB_NAME) or db_die(__FILE__, __LINE__, mysql_error());
+ global $mysql;
+     $mysql['connection'] = mysql_connect(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD) or db_die(__FILE__, __LINE__, mysql_error());
+
+ if (!$mysql['connection']) {
+  db_die(__FILE__, __LINE__, mysql_error());
+ }
+
+     $mysql['database'] = mysql_select_db(DB_NAME) or db_die(__FILE__, __LINE__, mysql_error());
+
+ if (!$mysql['database']) {
+  db_die(__FILE__, __LINE__, mysql_error());
+ }
 }
 
 function db_ins_connect() {
