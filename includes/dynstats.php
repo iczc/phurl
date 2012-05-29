@@ -8,11 +8,19 @@ $id = $alias;
 $result = mysql_query("SELECT SUM(clicks) AS clicks FROM ".DB_PREFIX."stats WHERE BINARY alias='$alias'");
 $total=mysql_fetch_assoc($result);
 ?>
-<br/><b>Clicks: </b><?php echo $total['clicks']; ?>
+<br/><b>Clicks: </b>
+<?php
+$curtot = $total['clicks'];
+if ($curtot == "1337") {
+	$curtot = "leet";
+} 
+
+echo $curtot;
+?>
 </td>
 </tr>
 </table><br/>
-<b>Regional statistics for <?php echo SITE_URL; ?>/<?php echo $alias ?> (Total <?php echo $total['clicks']; ?> clicks)</b><br />
+<b>Regional statistics for <?php echo SITE_URL; ?>/<?php echo $alias ?> (Total <?php echo $curtot; ?> clicks)</b><br />
 <?php
 $result = mysql_query("SELECT country, clicks FROM ".DB_PREFIX."stats WHERE BINARY alias='$alias' GROUP BY country ORDER BY clicks DESC");
 $countries = "";
