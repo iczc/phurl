@@ -4,8 +4,12 @@ require_once("../includes/functions.php");
 ini_set('display_errors', 0);
 db_connect();
 if (count($_GET) > 0) {
-    $url   = mysql_real_escape_string(trim($_GET['url']));
-    $alias = mysql_real_escape_string(trim($_GET['a']));
+	if (count($_GET) > 1) {
+		$alias = mysql_real_escape_string(trim($_GET['a']));
+	}
+	
+	$url   = mysql_real_escape_string(trim($_GET['url']));
+    
     if (!preg_match("/^(".URL_PROTOCOLS.")\:\/\//i", $url)) {
         $url = "http://".$url;
     }
