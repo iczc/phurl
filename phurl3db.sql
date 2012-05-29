@@ -44,9 +44,9 @@ INSERT INTO `phurl_urls` (`id`, `url`, `code`, `alias`, `date_added`, `ip`, `use
 (1, 0x687474703a2f2f706875726c2e676f6f676c65636f64652e636f6d2f, 'a', 'phurl', '2010-07-03 15:40:56', '127.0.0.1', '');
 
 CREATE TABLE IF NOT EXISTS `phurl_options` (
-  `setting` text NOT NULL,
+  `option` text NOT NULL,
   `value` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-INSERT INTO `phurl_options` (`setting`, `value`) VALUES
+INSERT INTO `phurl_options` (`option`, `value`) VALUES
 ('shortcode_type', '1');
