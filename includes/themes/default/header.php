@@ -32,6 +32,9 @@
 	$(document).click(function(){
 		showPage();
     });
+	$(document).mousemove(function(){
+		showPage();
+    });
 	
 	function showPage() {
 		$("#show-options").animate({ opacity: 1}, 2000);
