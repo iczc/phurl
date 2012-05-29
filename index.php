@@ -14,8 +14,13 @@ if (is_dir($filename)) {
     die ("To get Phurl up and running, you first need to go through the <a href=\"install\">installation wizard</a> which will help you set up your new URL shortener in a matter of moments.<br/><br/>If you've already installed Phurl, then you MUST delete the install directory before it will function.");
 }
 
-// include the config file
+// include the magic
 include "includes/config.php";
+include "includes/functions.php";
+
+// connect to the database
+db_connect();
+
 if (file_exists(THEME_PATH . "header.php")) {
 	include (THEME_PATH . "header.php");
 } else {

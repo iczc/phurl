@@ -42,6 +42,9 @@
 
 </script>
 <?php
+include "../../config.php";
+include "../../functions.php";
+db_connect();
 $getalias = trim(mysql_real_escape_string($_SERVER['REQUEST_URI']));
 $alias = substr($getalias, 1, strlen($getalias));
 $alias = str_replace("-","",$alias);
