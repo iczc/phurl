@@ -24,6 +24,12 @@ function get_last_number() {
     return $db_row[0];
 }
 
+function get_phurl_option($option) {
+	$db_result	=	mysql_query("SELECT value FROM ".DB_PREFIX."options WHERE option = '$option'") or db_die(__FILE__, __LINE__, mysql_error());
+	$db_row		=	mysql_fetch_row($db_result);
+	return $db_row[0];
+}
+
 function increase_last_number() {
     mysql_query("UPDATE ".DB_PREFIX."settings SET last_number = (last_number + 1)") or db_die(__FILE__, __LINE__, mysql_error());
 
