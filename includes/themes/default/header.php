@@ -42,10 +42,7 @@
 
 </script>
 <?php
-include "../../config.php";
-include "../../functions.php";
-db_connect();
-$getalias = trim(mysql_real_escape_string($_SERVER['REQUEST_URI']));
+$getalias = trim(mysql_real_escape_string($_SERVER['REQUEST_URI'], $mysql['connection']));
 $alias = substr($getalias, 1, strlen($getalias));
 $alias = str_replace("-","",$alias);
 $jquery = <<<JQUERY
