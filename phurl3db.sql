@@ -1,5 +1,10 @@
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+CREATE TABLE IF NOT EXISTS `phurl_options` (
+  `option` text NOT NULL,
+  `value` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+INSERT INTO `phurl_options` (`option`, `value`) VALUES
+('shortcode_type', '1');
 
 CREATE TABLE IF NOT EXISTS `phurl_settings` (
   `last_number` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -31,22 +36,15 @@ CREATE TABLE IF NOT EXISTS `phurl_urls` (
   KEY `alias` (`alias`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
-CREATE TABLE  IF NOT EXISTS `phurl_users` (
-`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-`uname` VARCHAR( 45 ) NOT NULL ,
-`fname` VARCHAR( 45 ) NOT NULL ,
-`lname` VARCHAR( 45 ) NOT NULL ,
-`email` VARCHAR( 45 ) NOT NULL ,
-`password` VARCHAR( 32 ) NOT NULL
-) ENGINE = MYISAM
-
 INSERT INTO `phurl_urls` (`id`, `url`, `code`, `alias`, `date_added`, `ip`, `user`) VALUES
-(1, 0x687474703a2f2f706875726c2e676f6f676c65636f64652e636f6d2f, 'a', 'phurl', '2010-07-03 15:40:56', '127.0.0.1', '');
+(1, 0x687474703a2f2f7777772e706875726c70726f6a6563742e6f72672f, 'a', 'phurl', '2012-05-29 12:25:00', '127.0.0.1', '');
 
-CREATE TABLE IF NOT EXISTS `phurl_options` (
-  `option` text NOT NULL,
-  `value` text NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
-INSERT INTO `phurl_options` (`option`, `value`) VALUES
-('shortcode_type', '1');
+CREATE TABLE IF NOT EXISTS `phurl_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uname` varchar(45) NOT NULL,
+  `fname` varchar(45) NOT NULL,
+  `lname` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `password` varchar(32) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
