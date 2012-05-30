@@ -20,7 +20,7 @@ echo $curtot;
 </td>
 </tr>
 </table><br/>
-<b>Regional statistics for <?php echo SITE_URL; ?>/<?php echo $alias ?> (Total <?php echo $curtot; ?> clicks)</b><br />
+<b>Regional statistics for <?php echo get_phurl_option('site_url'); ?>/<?php echo $alias ?> (Total <?php echo $curtot; ?> clicks)</b><br />
 <?php
 $result = mysql_query("SELECT country, clicks FROM ".DB_PREFIX."stats WHERE BINARY alias='$alias' GROUP BY country ORDER BY clicks DESC");
 $countries = "";
