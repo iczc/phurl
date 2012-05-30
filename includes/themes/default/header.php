@@ -13,8 +13,10 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo THEME_PATH; ?>style.css" />
 	<script type="text/javascript" src="<?php echo THEME_PATH; ?>jquery.js"></script>
 	<script type="text/javascript"> 
+	var tourl;
 	$(document).ready(function(){
 		$("input#url").bind("textchange",showPage);
+		$("input#url").bind("textchange",toggleButtons);
 		$("input#url").focus();
 
 			
@@ -23,6 +25,12 @@
 			$.get("api/create.php?url=" + url, function(data) {
         			$("input#url").val(data);
         			$("input#url").select();
+					$('#button').hide();
+					$('#hbutton').show();
+					tourl = data;
+					$('#hbutton').bind('click', function() {
+						window.location = tourl + "-";
+					});
     			});
 
    			return false;
@@ -35,7 +43,10 @@
 	$(document).mousemove(function(){
 		showPage();
     });
-	
+	function toggleButtons() {
+		$('#hbutton').hide();
+		$('#button').show();
+	}
 	function showPage() {
 		$("#show-options").animate({ opacity: 1}, 2000);
 		$("#header").animate({ opacity: 1}, 1000);

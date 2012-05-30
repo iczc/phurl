@@ -5,6 +5,7 @@
 <div id="url-box">
 		<div id="input"><input type="text" id="url" autocomplete="off" /></div>
 		<button id="button">Shorten</button>
+		<button id="hbutton">View Stats</button>
 		<div class="clear"></div>
 	</div>
 </form>
