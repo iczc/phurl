@@ -22,7 +22,7 @@
 			
 		$("form#surlform").submit(function(){
 			var url = $("input#url").val();	
-			$.get("api/create.php?url=" + url, function(data) {
+			$.get("api/create.php?a=&url=" + url, function(data) {
         			$("input#url").val(data);
         			$("input#url").select();
 					$('#button').hide();
