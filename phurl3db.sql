@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS `phurl_options` (
 
 INSERT INTO `phurl_options` (`option`, `value`) VALUES
 ('shortcode_type', 'r'),
-('site_url', 'http://beta.ur.cx'),
+('site_url', 'http://example.org'),
 ('site_title', 'Lorem Ipsum URL Shortener'),
 ('site_slogan', 'URLs made shorter, URLs made simpler.'),
 ('theme_path', 'includes/themes/default/'),
