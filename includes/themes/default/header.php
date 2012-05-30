@@ -8,10 +8,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title><?php echo SITE_TITLE; ?> | <?php echo SITE_SLOGAN; ?></title>
+<title><?php echo get_phurl_option('site_title'); ?> | <?php echo get_phurl_option('site_slogan'); ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="<?php echo THEME_PATH; ?>style.css" />
-	<script type="text/javascript" src="<?php echo THEME_PATH; ?>jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo get_phurl_option('theme_path'); ?>style.css" />
+	<script type="text/javascript" src="<?php echo get_phurl_option('theme_path'); ?>jquery.js"></script>
 	<script type="text/javascript"> 
 	var tourl;
 	$(document).ready(function(){
@@ -77,8 +77,8 @@ echo $jquery;
 <body>
 <div id="container">
  <div id="header">
- 	<div id="logo"><h1><?php echo SITE_TITLE; ?></h1></div>
- 	<span id="slogan">- <?php echo SITE_SLOGAN; ?></span>
+ 	<div id="logo"><h1><?php echo get_phurl_option('site_title'); ?></h1></div>
+ 	<span id="slogan">- <?php echo get_phurl_option('site_slogan'); ?></span>
  	<div id="menu">
  		<ul>
  			<li><a href="/">Home</a></li>

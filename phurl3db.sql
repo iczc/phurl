@@ -4,7 +4,12 @@ CREATE TABLE IF NOT EXISTS `phurl_options` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 INSERT INTO `phurl_options` (`option`, `value`) VALUES
-('shortcode_type', '1');
+('shortcode_type', 'r'),
+('site_url', 'http://beta.ur.cx'),
+('site_title', 'Lorem Ipsum URL Shortener'),
+('site_slogan', 'URLs made shorter, URLs made simpler.'),
+('theme_path', 'includes/themes/default/'),
+('phurl_version', '3.0');
 
 CREATE TABLE IF NOT EXISTS `phurl_settings` (
   `last_number` bigint(20) unsigned NOT NULL DEFAULT '0',

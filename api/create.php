@@ -91,7 +91,7 @@ if (count($_GET) > 0) {
             $code = $alias;
         }
 
-        $short_url = SITE_URL."/".$code;
+        $short_url = get_phurl_option('site_url')."/".$code;
 
         $_GET['url']   = "";
         $_GET['alias'] = "";
