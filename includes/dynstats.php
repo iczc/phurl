@@ -50,7 +50,7 @@ $row = mysql_fetch_array($result);
 <br/>
 <b>Top 5 countries for this URL:</b><br/>
 <?php
-$db_result = mysql_query("SELECT * FROM ".DB_PREFIX."stats WHERE alias='$alias' ORDER BY clicks DESC LIMIT 0, 5") or db_die(__FILE__, __LINE__, mysql_error());
+$db_result = mysql_query("SELECT * FROM ".DB_PREFIX."stats WHERE BINARY alias='$alias' ORDER BY clicks DESC LIMIT 0, 5") or db_die(__FILE__, __LINE__, mysql_error());
 echo "<table style=\"padding: 3px;\" align=\"center\" id=\"url_list\">\n";
 while ($db_row = mysql_fetch_assoc($db_result)) {
     $db_row = array_filter($db_row, "stripslashes");
