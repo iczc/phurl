@@ -23,7 +23,7 @@ include 'html/footer.php';
 die();
 }
 ?>
-<h3>Statistics for <a href="<?php echo SITE_URL; ?>/<?php echo $alias ?>"><?php echo SITE_URL; ?>/<?php echo $alias ?></a></h3>
+<h3>Statistics for <a href="<?php echo get_phurl_option('site_url'); ?>/<?php echo $alias ?>"><?php echo get_phurl_option('site_url'); ?>/<?php echo $alias ?></a></h3>
 <table width="60%" align="center">
 <tr>
 <td align="center" width="240" height="180"><img src="http://api1.thumbalizr.com/?width=250&url=<?php echo $url; ?>" /></td>
