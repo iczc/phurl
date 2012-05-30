@@ -87,10 +87,22 @@ a {
 .notice {
 	border: 1px dotted #000;
 	padding: 7px;
+	width: 600px;
+	margin-left: 25%;
+	margin-right: 25%;
 	background: #deffe9;
 	filter:alpha(opacity=0); 
    -moz-opacity: 0; 
    opacity: 0; 
+}
+
+.noooo {
+	border: 1px dotted #000;
+	padding: 7px;
+	width: 600px;
+	margin-left: 25%;
+	margin-right: 25%;
+	background: #f59fa1;
 }
 
 #footer {
