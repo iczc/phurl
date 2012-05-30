@@ -152,10 +152,40 @@ a {
 	cursor: pointer;
 }
 
+#shorten #url-box #hbutton {
+	float: right;
+	border-left: 1px solid #eee;
+	padding: 5px;
+	font-size: 15px;
+	font-weight: 600;
+	text-align: center;
+	width: 100px;
+	background: #eee;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	cursor: pointer;
+}
+
 #shorten #button {
 border-style: none;
 }
+#shorten #hbutton {
+border-style: none;
+}
+
+#hbutton {
+	display: none;
+}
+
 #shorten #url-box #button:hover {
+	color: #fff;
+	background: #000;
+}
+#shorten #url-box #hbutton:hover {
 	color: #fff;
 	background: #000;
 }
