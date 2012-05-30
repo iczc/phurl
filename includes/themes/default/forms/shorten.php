@@ -1,6 +1,6 @@
 
 <div id="shorten">
-	<img src="<?php echo THEME_PATH; ?>enter-url-here.png" />
+	<img src="<?php echo get_phurl_option('theme_path'); ?>enter-url-here.png" />
 <form id="surlform">	
 <div id="url-box">
 		<div id="input"><input type="text" id="url" autocomplete="off" /></div>

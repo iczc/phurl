@@ -21,18 +21,18 @@ include "includes/functions.php";
 // connect to the database
 db_connect();
 
-if (file_exists(THEME_PATH . "header.php")) {
-	include (THEME_PATH . "header.php");
+if (file_exists(get_phurl_option('theme_path') . "header.php")) {
+	include (get_phurl_option('theme_path') . "header.php");
 } else {
 	die ("<h2>Could not load theme</h2>");
 }
 
-include (THEME_PATH . "forms/shorten.php");
+include (get_phurl_option('theme_path') . "forms/shorten.php");
 
 
 
-if (file_exists(THEME_PATH . "footer.php")) {
-	include (THEME_PATH . "footer.php");
+if (file_exists(get_phurl_option('theme_path') . "footer.php")) {
+	include (get_phurl_option('theme_path') . "footer.php");
 } else {
 	die ("<h2>Could not load theme</h2>");
 }

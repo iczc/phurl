@@ -121,7 +121,7 @@ function get_url($alias) {
 }
 
 function get_hostname() {
-    $data = parse_url(SITE_URL);
+    $data = parse_url(get_phurl_option('site_url'));
 
     return $data['host'];
 }
