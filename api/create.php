@@ -33,32 +33,32 @@ if (count($_GET) > 0) {
 		}
 
     if (strlen($url) == 0) {
-        $_ERROR[] = "Please enter an URL to shorten.";
+        $_ERROR[] = "01";
     }
     else if (empty($data['scheme']) || empty($data['host'])) {
-        $_ERROR[] = "Please enter a valid URL to shorten.";
+        $_ERROR[] = "02";
     }
     else {
 	$blcheck = file_get_contents("http://gsb.phurlproject.org/lookup.php?url=$url");
 	if (trim($blcheck) == "1") {
- 	     $_ERROR[] = "Blacklist match";
+ 	     $_ERROR[] = "03";
 	}
         $hostname = get_hostname();
         $domain   = get_domain();
         if (preg_match("/($hostname|$domain)/i", $data['host'])) {
-            $_ERROR[] = "The URL you have entered is not allowed.";
+            $_ERROR[] = "04";
         }
     }
 
     if (strlen($alias) > 0) {
         if (!preg_match("/^[a-zA-Z0-9_-]+$/", $alias)) {
-            $_ERROR[] = "Custom alias can only contain letters, numbers, underscores and dashes.";
+            $_ERROR[] = "05";
         }
         else if (code_exists($alias) || alias_exists($alias)) {
-            $_ERROR[] = "The custom alias you entered is already exists.";
+            $_ERROR[] = "06";
         }
     }
-
+	print_errors();
     if (count($_ERROR) == 0) {
         $create = true;
 
