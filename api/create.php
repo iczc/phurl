@@ -78,15 +78,15 @@ if (count($_GET) > 0) {
         if ($create) {
             do {
 				$sctype = get_phurl_option('shortcode_type');
-				if ($sctype = "r") {
-					$code = generate_code_rand();
-				} else {
-                $code = generate_code(get_last_number());
+					if ($sctype = "r") {
+						$code = generate_code_rand();
+					} else {
+						$code = generate_code(get_last_number());
 
-                if (!increase_last_number()) {
-                    die("System error!");
-                }
-				}
+						if (!increase_last_number()) {
+							die("System error!");
+						}
+					}
                 if (code_exists($code) || alias_exists($code)) {
                     continue;
                 }

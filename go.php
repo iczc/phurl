@@ -24,7 +24,7 @@ if (preg_match("/^[a-zA-Z0-9_-]+\-$/", $alias)) {
 	if (trim($blcheck) == "1") {
 		define('PHURL', true);
 		include "includes/themes/default/header.php";
- 	     echo "<div class=\"noooo\"><h2>Blacklisted URL Blocked</h2><p>The page you requested has been identified as malicious. As a result of this, we regret that we can't forward you there.</p><p>Sorry about that.</p></div><br/>";
+ 	     echo "<div align=\"center\"><div class=\"noooo\"><h2>Blacklisted URL Blocked</h2><p>The page you requested has been identified as malicious. As a result of this, we regret that we can't forward you there.</p><p>Sorry about that.</p></div></div><br/>";
 		include "includes/themes/default/footer.php";
 		die();
 	} else {
