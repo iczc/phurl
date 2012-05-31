@@ -4,6 +4,9 @@
      exit();
  }
 
+$getalias = trim(mysql_real_escape_string($_SERVER['REQUEST_URI'], $mysql['connection']));
+$alias = substr($getalias, 1, strlen($getalias));
+$alias = str_replace("-","",$alias);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -15,27 +18,35 @@
 	<script type="text/javascript"> 
 	var tourl;
 	$(document).ready(function(){
-		$("input#url").bind("textchange",showPage);
-		$("input#url").bind("textchange",toggleButtons);
-		$("input#url").focus();
-
-			
-		$("form#surlform").submit(function(){
-			var url = $("input#url").val();	
-			$.get("api/create.php?a=&url=" + url, function(data) {
-        			$("input#url").val(data);
-        			$("input#url").select();
-					$('#button').hide();
-					$('#hbutton').show();
-					tourl = data;
-					$('#hbutton').bind('click', function() {
-						window.location = tourl + "-";
-					});
-    			});
-
-   			return false;
-		});
-    	});
+	$("input#url").bind("textchange",showPage);
+	<?php
+	if (strlen($alias) > 1) {
+	echo "showPage();";
+	}
+	?>
+	$("input#url").focus();	
+	$("form#surlform").submit(function(){
+		var url = $("input#url").val();	
+		$.get("api/create.php?a=&url=" + url, function(data) {
+        		$("input#url").val(data);
+        		$("input#url").select();
+				$('#button').hide();
+				$('#hbutton').show();
+				tourl = data;
+				$('#hbutton').bind('click', function() {
+					window.location = tourl + "-";
+				});
+				var lastText = jQuery('input#url').val();
+				jQuery('div#input').on('keyup', 'input#url', function() {
+				if(jQuery(this).val() !== lastText) {
+					toggleButtons();
+				}
+				    lastText = jQuery(this).val();
+				});
+    		});
+   		return false;
+	});
+	});
 	
 	$(document).click(function(){
 		showPage();
@@ -56,9 +67,6 @@
 
 </script>
 <?php
-$getalias = trim(mysql_real_escape_string($_SERVER['REQUEST_URI'], $mysql['connection']));
-$alias = substr($getalias, 1, strlen($getalias));
-$alias = str_replace("-","",$alias);
 $jquery = <<<JQUERY
 <script>
  $(document).ready(function() {
