@@ -2,6 +2,7 @@
 require_once("../includes/config.php");
 require_once("../includes/functions.php");
 ini_set('display_errors', 0);
+$prefix[0] = '';
 db_connect();
 if (count($_GET) > 0) {
 	if (count($_GET) > 1) {
@@ -11,7 +12,12 @@ if (count($_GET) > 0) {
 	$url   = mysql_real_escape_string(trim($_GET['url']));
     
     if (!preg_match("/^(".URL_PROTOCOLS.")\:\/\//i", $url)) {
+		$prefix = explode(":", $url);
+		if ($prefix[0] == 'mailto') {
+			$url = $url;
+		} else {
         $url = "http://".$url;
+		}
     }
 
     $last = $url[strlen($url) - 1];
@@ -21,6 +27,10 @@ if (count($_GET) > 0) {
     }
 
     $data = @parse_url($url);
+		if ($prefix[0] == 'mailto') {
+			$data['scheme'] = 'mailto';
+			$data['host'] = 'none';
+		}
 
     if (strlen($url) == 0) {
         $_ERROR[] = "Please enter an URL to shorten.";
